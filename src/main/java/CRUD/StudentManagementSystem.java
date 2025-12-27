@@ -41,5 +41,20 @@ public class StudentManagementSystem {
             throw new RuntimeException(e);
         }
 
+        while(repeat) {
+            System.out.println("\n🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠");
+            System.out.println("CRUD OPTIONS TO CHOOSE:");
+            System.out.println("1. CREATE");
+            System.out.println("2. READ");
+            System.out.println("3. UPDATE");
+            System.out.println("4. DELETE");
+            System.out.println("5. EXIT");
+            System.out.println("🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠");
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("\nEnter your choice: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+        }
     }
 }
