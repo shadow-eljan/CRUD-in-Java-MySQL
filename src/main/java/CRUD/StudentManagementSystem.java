@@ -101,5 +101,36 @@ public class StudentManagementSystem {
             throw new RuntimeException(e);
         }
     }
+    void addEnrollment() {
+        System.out.print("Enter student Id: ");
+        int studentId = scanner.nextInt();
+
+        System.out.print("Enter  course ID: ");
+        int courseId = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("Enter Year:");
+        int year = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter Month:");
+        int month = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter Date:");
+        int day = scanner.nextInt();
+        scanner.nextLine();
+        LocalDate localDate = LocalDate.of(year, month, day);
+
+
+        try(PreparedStatement ps = connection.prepareStatement(createCourses)){
+            ps.setInt(1, studentId);
+            ps.setInt(2, courseId);
+            ps.setDouble(3, localDate);
+
+            int rows = ps.executeUpdate();
+            System.out.println(rows +" data Created.");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }
