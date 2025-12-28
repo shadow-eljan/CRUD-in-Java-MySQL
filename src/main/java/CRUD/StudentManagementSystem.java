@@ -78,4 +78,28 @@ public class StudentManagementSystem {
             throw new RuntimeException(e);
         }
     }
+    void addCourse() {
+        System.out.print("Enter course name: ");
+        String courseName = scanner.nextLine();
+
+        System.out.print("Enter course credit: ");
+        int credit = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Enter course fee: ");
+        double fee = scanner.nextDouble();
+        scanner.nextLine();
+
+        try(PreparedStatement ps = connection.prepareStatement(createCourses)){
+            ps.setString(1, courseName);
+            ps.setInt(2, credit);
+            ps.setDouble(3, fee);
+
+            int rows = ps.executeUpdate();
+            System.out.println(rows +" data Created.");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
