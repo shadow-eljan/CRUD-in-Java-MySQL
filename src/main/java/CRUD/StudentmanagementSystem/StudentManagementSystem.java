@@ -38,6 +38,7 @@ public class StudentManagementSystem {
             throw new RuntimeException(e);
         }
 
+        StudentManagementSystem s = new StudentManagementSystem();
         while(repeat) {
             System.out.println("\n🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠🌠");
             System.out.println("CRUD OPTIONS TO CHOOSE:");
@@ -56,7 +57,7 @@ public class StudentManagementSystem {
             scanner.nextLine();
 
             switch(choice){
-                case 1 -> addStudent();
+                case 1 -> s.addStudent();
                 case 2 -> addCourse();
                 case 3 -> addEnrollment();
                 case 4 -> viewStudents();
@@ -67,7 +68,7 @@ public class StudentManagementSystem {
             }
         }
     }
-    static void addStudent() {
+     void addStudent() {
         System.out.print("Enter  student name: ");
         String name = scanner.nextLine();
 

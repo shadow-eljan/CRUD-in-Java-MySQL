@@ -5,7 +5,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 import java.sql.*;
 import java.util.Scanner;
 
-public class Main {
+public class CRUDSystem {
     public static void main(String[] args) {
         boolean repeat = true;
         Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
